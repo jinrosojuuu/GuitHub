@@ -1,0 +1,63 @@
+-- GuitHub Chatbot Database Setup
+CREATE DATABASE IF NOT EXISTS guithub_db;
+USE guithub_db;
+
+CREATE TABLE IF NOT EXISTS chatbot_entries (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    keyword VARCHAR(255) NOT NULL,
+    reply TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Default entries
+INSERT INTO chatbot_entries (keyword, reply) VALUES
+('hello', 'Hello! Welcome to GuitHub. How can I help you find your perfect guitar today?'),
+('hi', 'Hi there! I''m here to help you with all your guitar needs. What are you looking for?'),
+('hey', 'Hey! Welcome to GuitHub! Are you looking for a specific type of guitar?'),
+('bye', 'Goodbye! Thanks for visiting GuitHub. Come back anytime!'),
+('thanks', 'You''re welcome! Feel free to ask if you need anything else.'),
+('thank you', 'My pleasure! Is there anything else I can help you with?'),
+('electric', 'We have a great selection of electric guitars! Check out our Fender Stratocaster (₱45,150), Epiphone ES-335 (₱30,150), Gibson Doubleneck SG (₱70,249), and Fender Telecaster (₱43,100).'),
+('acoustic', 'Our acoustic guitars include the Martin D-28 (₱215,000) and Taylor 314ce (₱119,999.50) — both top-tier instruments!'),
+('bass', 'We carry the Ernie Ball Music Man StingRay 5 (₱160,000), Rickenbacker Bass (₱210,150), and Fernandes Precision Bass (₱10,199.98).'),
+('fender', 'Fender guitars we carry: Fender Stratocaster (₱45,150) and Fender Telecaster (₱43,100). Both iconic classics!'),
+('gibson', 'Gibson models available: Gibson Les Paul (₱130,000) and Gibson Doubleneck SG (₱70,249).'),
+('martin', 'The Martin D-28 is available for ₱215,000. It''s known for its exceptional tone and craftsmanship!'),
+('taylor', 'The Taylor 314ce is ₱119,999.50. A fantastic acoustic-electric with a natural finish!'),
+('price', 'We have guitars ranging from ₱67.69 (fun novelties) to ₱215,000 (premium acoustics). Visit our Products page to see all prices!'),
+('cheap', 'Looking for budget-friendly options? We have the Fernandes Precision Bass at ₱10,199.98, the Joyo American effect at ₱1,500, or the fun Crust Punk Pizza 3000 Guitar at just ₱67.69!'),
+('expensive', 'Our premium picks: Martin D-28 (₱215,000), Rickenbacker Bass (₱210,150), and Ernie Ball Music Man StingRay 5 (₱160,000).'),
+('beginner', 'For beginners, we recommend the Fender Stratocaster or Telecaster — versatile, iconic, and well-priced around ₱43,000–₱45,000. Also check out the Epiphone ES-335 at ₱30,150!'),
+('shipping', 'We offer free shipping on orders over ₱500! Most orders ship within 24 hours.'),
+('warranty', 'All our guitars come with a 1-year manufacturer warranty. We stand behind every instrument we sell!'),
+('effects', 'We carry guitar effects too! Boss Chorus CE-2w (₱3,000), Google OverDrive (₱67.67), and Joyo American (₱1,500).'),
+('contact', 'You can reach us at info@guithub.com or call (555) 123-4567. Visit us at 123 Music Street, Downtown, CA 90210!'),
+('hours', 'Our store hours are: Monday–Saturday 10am–8pm, Sunday 12pm–6pm.'),
+('address', 'We''re located at 123 Music Street, Downtown, CA 90210. Come visit us!'),
+('products', 'Browse our full collection at the Products page! We have 15+ guitars in electric, acoustic, bass, effects, and exotic categories.'),
+('help', 'I can help you with: finding guitars by type (electric, acoustic, bass), price info, shipping, warranty, store hours, and more. What do you need?'),
+('recommend', 'What''s your budget and style? I can recommend the perfect guitar! For rock: Stratocaster. For blues: Les Paul. For jazz: ES-335. For country: Telecaster.'),
+('les paul', 'The Gibson Les Paul is available for ₱130,000. Known for its warm, thick tone — perfect for rock and blues!'),
+('stratocaster', 'The Fender Stratocaster is ₱45,150. A timeless classic with versatile tone for any genre!'),
+('telecaster', 'The Fender Telecaster is ₱43,100. Bright, twangy tone — beloved in country and rock!'),
+('stingray', 'The Ernie Ball Music Man StingRay 5 Bass is ₱160,000. Punchy tone, active electronics — a bassist''s dream!'),
+('rickenbacker', 'The Rickenbacker Bass is ₱210,150. Famous for its unique jangly tone, used by legends like Paul McCartney!'),
+('sg', 'The Gibson Doubleneck SG is ₱70,249. A legendary double-neck for those epic rock performances!'),
+('epiphone', 'The Epiphone ES-335 is ₱30,150. Great semi-hollow tone at a more accessible price point!'),
+('jaguar', 'The Squier CV ''70s Jaguar is ₱29,250. Vintage offset vibes with great playability!'),
+('boss', 'The Boss Chorus CE-2w is ₱3,000. A legendary chorus pedal, perfect for lush, shimmering guitar tones!'),
+('joyo', 'The Joyo American is ₱1,500. Affordable distortion pedal great for American-voiced tones!'),
+('exotic', 'Feeling adventurous? Check out the Crust Punk Pizza 3000 Guitar for just ₱67.69 — a truly one-of-a-kind instrument!'),
+('pizza', 'The Crust Punk Pizza 3000 Guitar is our most... unique offering at ₱67.69. Truly unforgettable!'),
+('store', 'Visit our store at 123 Music Street, Downtown, CA 90210. Open Mon–Sat 10am–8pm and Sun 12pm–6pm!'),
+('payment', 'We accept all major payment methods. For large purchases, contact us at info@guithub.com to discuss payment plans!'),
+('return', 'We have a hassle-free return policy. Contact us within 30 days of purchase at info@guithub.com for assistance.'),
+('setup', 'Every guitar is inspected, set up, and tested by our team of expert luthiers before shipping. You''ll receive it ready to play!'),
+('luthier', 'Our team includes professional luthiers who set up every guitar before it ships. We ensure perfect playability!'),
+('brand', 'We carry top brands: Fender, Gibson, Epiphone, Martin, Taylor, Ernie Ball Music Man, Rickenbacker, Fernandes, Squier, Boss, and Joyo!'),
+('category', 'We have guitars in these categories: Electric, Acoustic, Bass, Guitar Effects, and Exotic. Visit our Products page to filter!'),
+('email', 'You can email us at info@guithub.com. We typically respond within 24 hours!'),
+('phone', 'Call us at (555) 123-4567 during store hours: Mon–Sat 10am–8pm, Sun 12pm–6pm.'),
+('about', 'GuitHub was founded by a group of musicians and aspiring developers. We''re passionate about helping you find your perfect sound!'),
+('who', 'GuitHub is an online guitar store founded in 2026 by musicians and developers. Our expert staff includes professional musicians and luthiers!');
